@@ -7,6 +7,9 @@ on:
 
 jobs:
   update-data:
+    # This collector publishes to the upstream authors' S3 bucket.
+    # Forks use their own data workflow; do not run the upstream publisher here.
+    if: github.repository == 'jdkatz21/Prediction_Markets_Public'
     runs-on: ubuntu-latest
 
     steps:
